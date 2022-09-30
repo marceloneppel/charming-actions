@@ -49,6 +49,7 @@ export class UploadCharmAction {
     try {
       await this.snap.install('charmcraft', this.charmcraftChannel);
       process.chdir(this.charmPath!);
+      core.warning('test');
       await this.charmcraft.pack();
       const overrides = this.overrides!;
 

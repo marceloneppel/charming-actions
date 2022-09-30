@@ -21391,6 +21391,7 @@ class UploadCharmAction {
             try {
                 yield this.snap.install('charmcraft', this.charmcraftChannel);
                 process.chdir(this.charmPath);
+                core.warning('test');
                 yield this.charmcraft.pack();
                 const overrides = this.overrides;
                 const imageResults = yield this.charmcraft.uploadResources(overrides);
