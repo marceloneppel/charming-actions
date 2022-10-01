@@ -21667,8 +21667,8 @@ class Charmcraft {
     pack() {
         return __awaiter(this, void 0, void 0, function* () {
             // const args = ['apt', 'update'];
-            const args = ['"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)'];
-            yield (0, exec_1.exec)('eval', args, this.execOptions);
+            // const args = ['"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)'];
+            // await exec('eval', args, this.execOptions);
             const args2 = ['charmcraft', 'pack', '--destructive-mode', '--quiet'];
             yield (0, exec_1.exec)('sudo', args2, this.execOptions);
         });
