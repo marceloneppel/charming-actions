@@ -21858,11 +21858,9 @@ class Charmcraft {
     }
     pack() {
         return __awaiter(this, void 0, void 0, function* () {
-            // const args = ['charmcraft', 'pack', '--destructive-mode', '-v'];
             const args = ['apt', 'update'];
             yield (0, exec_1.exec)('sudo', args, this.execOptions);
-            const args2 = ['apt', 'install', 'cargo'];
-            core.warning(JSON.stringify(this.execOptions));
+            const args2 = ['charmcraft', 'pack', '--destructive-mode', '--quiet'];
             yield (0, exec_1.exec)('sudo', args2, this.execOptions);
         });
     }

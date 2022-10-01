@@ -176,11 +176,9 @@ class Charmcraft {
   }
 
   async pack() {
-    // const args = ['charmcraft', 'pack', '--destructive-mode', '-v'];
     const args = ['apt', 'update'];
     await exec('sudo', args, this.execOptions);
-    const args2 = ['apt', 'install', 'cargo'];
-    core.warning(JSON.stringify(this.execOptions));
+    const args2 = ['charmcraft', 'pack', '--destructive-mode', '--quiet'];
     await exec('sudo', args2, this.execOptions);
   }
 
