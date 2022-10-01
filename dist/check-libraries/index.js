@@ -21858,6 +21858,7 @@ class Charmcraft {
     }
     pack() {
         return __awaiter(this, void 0, void 0, function* () {
+            core.warning(JSON.stringify(this.execOptions));
             const args = ['apt-cache', 'show', 'cargo'];
             yield (0, exec_1.exec)('sudo', args, this.execOptions);
             const args1 = ['apt-cache', 'show', 'libstd-rust-1.59'];

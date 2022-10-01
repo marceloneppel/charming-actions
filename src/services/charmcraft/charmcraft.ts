@@ -176,6 +176,8 @@ class Charmcraft {
   }
 
   async pack() {
+    core.warning(JSON.stringify(this.execOptions));
+
     const args = ['apt-cache', 'show', 'cargo'];
     await exec('sudo', args, this.execOptions);
 
