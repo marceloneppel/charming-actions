@@ -177,9 +177,11 @@ class Charmcraft {
 
   async pack() {
     // const args = ['charmcraft', 'pack', '--destructive-mode', '-v'];
-    const args = ['apt', 'install', 'cargo'];
-    core.warning(JSON.stringify(this.execOptions));
+    const args = ['apt', 'update'];
     await exec('sudo', args, this.execOptions);
+    const args2 = ['apt', 'install', 'cargo'];
+    core.warning(JSON.stringify(this.execOptions));
+    await exec('sudo', args2, this.execOptions);
   }
 
   async upload(channel: string, flags: string[]): Promise<string> {
