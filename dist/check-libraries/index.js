@@ -21860,8 +21860,14 @@ class Charmcraft {
         return __awaiter(this, void 0, void 0, function* () {
             const args = ['apt-cache', 'show', 'cargo'];
             yield (0, exec_1.exec)('sudo', args, this.execOptions);
-            const args2 = ['charmcraft', 'pack', '--destructive-mode', '--quiet'];
+            const args1 = ['apt-cache', 'show', 'libstd-rust-1.59'];
+            yield (0, exec_1.exec)('sudo', args1, this.execOptions);
+            const args2 = ['apt-cache', 'show', 'libstd-rust-dev'];
             yield (0, exec_1.exec)('sudo', args2, this.execOptions);
+            const args3 = ['apt-cache', 'show', 'rustc'];
+            yield (0, exec_1.exec)('sudo', args3, this.execOptions);
+            const args4 = ['charmcraft', 'pack', '--destructive-mode', '--quiet'];
+            yield (0, exec_1.exec)('sudo', args4, this.execOptions);
         });
     }
     upload(channel, flags) {

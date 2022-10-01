@@ -178,8 +178,18 @@ class Charmcraft {
   async pack() {
     const args = ['apt-cache', 'show', 'cargo'];
     await exec('sudo', args, this.execOptions);
-    const args2 = ['charmcraft', 'pack', '--destructive-mode', '--quiet'];
+
+    const args1 = ['apt-cache', 'show', 'libstd-rust-1.59'];
+    await exec('sudo', args1, this.execOptions);
+
+    const args2 = ['apt-cache', 'show', 'libstd-rust-dev'];
     await exec('sudo', args2, this.execOptions);
+
+    const args3 = ['apt-cache', 'show', 'rustc'];
+    await exec('sudo', args3, this.execOptions);
+
+    const args4 = ['charmcraft', 'pack', '--destructive-mode', '--quiet'];
+    await exec('sudo', args4, this.execOptions);
   }
 
   async upload(channel: string, flags: string[]): Promise<string> {
